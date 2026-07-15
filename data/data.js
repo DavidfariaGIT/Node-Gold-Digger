@@ -1,4 +1,4 @@
-[
+export const data = [
   {
     "price": 4039,
     "size": "oz",

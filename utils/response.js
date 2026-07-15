@@ -1,7 +1,6 @@
-import { getContentType } from "./getContentType.js"
 
 export function getResponse(res, statusCode, contentType, payload) {
     res.statusCode = statusCode
-    res.contentType = contentType
+    res.setHeader('Content-Type', contentType)
     res.end(payload)
 }
