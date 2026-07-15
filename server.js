@@ -17,6 +17,15 @@ const server = http.createServer(async (req, res) => {
         return await handlePost(req, res)
     } else if (req.url.startsWith('/api')) {
         return await serveStatic(req, res, __dirname)
+    } else if (req.url === '/gold/live') {
+        res.setHeader('Content-Type', 'text/control-stream')
+        res.setHeader('Cache-Control', 'no-cache')
+        res.setHeader('Connection', 'keep-alive')
+
+        setInterval(() => {
+            const gold = getGold()
+
+        }, 2000)
     }
 
 
