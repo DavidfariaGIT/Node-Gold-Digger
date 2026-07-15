@@ -1,0 +1,52 @@
+[
+  {
+    "price": 4039,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 3987,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 4012,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 3955,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 4071,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 3998,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 4025,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 3969,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 4058,
+    "size": "oz",
+    "currency": "USD"
+  },
+  {
+    "price": 4001,
+    "size": "oz",
+    "currency": "USD"
+  }
+]
