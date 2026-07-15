@@ -1,5 +1,7 @@
 import { getData } from ".././utils/getData.js";
 import { getResponse } from "../utils/response.js";
+import { parseJSONbody } from '.././utils/parseJSONbody.js'
+import { EventEmitter } from 'node:events'
 import { data } from '.././data/data.js'
 
 export async function handleGet(res) {
@@ -8,7 +10,20 @@ export async function handleGet(res) {
   getResponse(res, 200, "Application/json", content);
 }
 
-export async function handlePost(req, res) {}
+export async function handlePost(req, res) {
+  try {
+  const data = await parseJSONbody(req)
+  await addToData(data) 
+
+  const purchaseEvents = new EventEmitter()
+  purchaseEvents.on('purchase-added', () => {
+    getResponse(res, 200, 'application/json',  data)
+  })
+  purchaseEvents.emit('purchase-added', data)
+  } catch (err) {
+    getResponse(res, 400, 'application/json', JSON.stringify({ error: err }))
+  }
+}
 
 export async function handleGold(res) {
   res.statusCode = 200;
